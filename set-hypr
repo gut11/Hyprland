@@ -193,6 +193,25 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     chmod +x ~/.config/waybar/scripts/waybar-wttr.py
     chmod +x ~/.config/waybar/scripts/baraction
     chmod +x ~/.config/waybar/scripts/update-sys
+	WLDIR=/usr/share/wayland-sessions
+    	if [ -d "$WLDIR" ]; then
+        	echo -e "$COK - $WLDIR found"
+    	else
+        	echo -e "$CWR - $WLDIR NOT found, creating..."
+        	sudo mkdir $WLDIR
+    fi 
+    sudo cp extras/hyprland.desktop /usr/share/wayland-sessions/
+    sudo sudo sed -i 's/Exec=Hyprland/Exec=\/home\/'$USER'\/start-hypr/' /usr/share/wayland-sessions/hyprland.desktop
+    cp extras/start-hypr ~/
+
+    #setup the first look and feel as dark
+    ln -sf ~/.config/waybar/style/style-dark.css ~/.config/waybar/style.css
+    ln -sf ~/.config/wofi/style/style-dark.css ~/.config/wofi/style.css
+    xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita-dark"
+    xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita-dark"
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+    gsettings set org.gnome.desktop.interface icon-theme "Adwaita-dark"
+fi
 
 ### Script is done ###
 echo -e "$CNT - Script had completed!"
