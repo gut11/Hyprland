@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: 16px;
+    font-size: 11px;
     min-height: 0;
 }
 
@@ -93,10 +93,19 @@ tooltip label{
     color: #e92d4d;
 }
 
+#cpu{
+	color: #2b2b2c;
+}
+
+#clock{
+	border-radius: 10px;
+}
 
 #workspaces {
     padding-right: 0px;
     padding-left: 5px;
+    margin-left: 10px;
+	border-radius: 10px;
 }
 
 #custom-power_profile {
@@ -109,12 +118,6 @@ tooltip label{
     border-radius: 10px;
     margin-left: 20px;
     margin-right: 20px;
-}
-
-#custom-launch_wofi {
-    color: #407cdd;
-    margin-left: 10px;
-    border-right: 0px;
 }
 
 #pulseaudio {
