@@ -7,7 +7,8 @@
 # Below is a list of the packages that would be installed
 #
 # hyprland: This is the Hyprland compositor
-# kitty: This is the default terminal
+# alacritty: This is the default terminal
+# kitty: Secondary terminal
 # waybar-hyprland: This is a fork of waybar with Hyprland workspace support
 # swww: This is used to set a desktop background image
 # wofi: This is an application launcher menu
@@ -100,7 +101,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 1
     echo -e "\n$CNT - Stage 1 - Installing main components, this may take a while..."
-    for SOFTWR in hyprland kitty waybar swww wofi mako xdg-desktop-portal-hyprland swappy grim slurp nemo ly
+    for SOFTWR in hyprland alacritty kitty waybar swww wofi mako xdg-desktop-portal-hyprland swappy grim slurp nemo ly
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
@@ -138,7 +139,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 3
     echo -e "\n$CNT - Stage 3 - Installing theme and visual related tools and utilities, this may take a while..."
-    for SOFTWR in ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings qt5-svg qt5-quickcontrols2 qt5-graphicaleffects 
+    for SOFTWR in ttf-hack-nerd ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings qt5-svg qt5-quickcontrols2 qt5-graphicaleffects 
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
