@@ -7,6 +7,7 @@
 # Below is a list of the packages that would be installed
 #
 # hyprland: This is the Hyprland compositor
+# hypridle: hyprland daemon for idle control
 # alacritty: This is the default terminal
 # kitty: Secondary terminal
 # waybar-hyprland: This is a fork of waybar with Hyprland workspace support
@@ -101,7 +102,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 1
     echo -e "\n$CNT - Stage 1 - Installing main components, this may take a while..."
-    for SOFTWR in hyprland alacritty kitty waybar swww wofi mako xdg-desktop-portal-hyprland swappy grim slurp nemo ly
+    for SOFTWR in hyprland hypridle alacritty kitty waybar swww wofi mako xdg-desktop-portal-hyprland swappy grim slurp nemo ly
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
